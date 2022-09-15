@@ -22,17 +22,17 @@
       <form class="col s12 center" action="/to-do-list/criar-conta" method="post">
         <div class="row center">
           <div class="input-field col offset-s3 s6">
-            <input placeholder="Nome de usuário" id="user" type="text" class="validate">
-            <label for="user">Nome de usuário</label>
+            <input name="username" id="username" type="text" class="validate">
+            <label for="username">Nome de usuário</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col offset-s3 s6">
-            <input id="password" type="password" class="validate">
+            <input id="password" name="passoword" type="password" class="validate">
             <label for="password">Senha</label>
           </div>
         </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Criar conta
+        <button class="btn waves-effect waves-light">Criar conta
           <i class="material-icons right">send</i>
         </button>
       </form>
