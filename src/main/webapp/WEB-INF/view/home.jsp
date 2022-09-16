@@ -19,6 +19,8 @@
 
     <h2 class="center">Minhas tarefas</h2>
 
+    <p class="center">Total de tarefas adicionadas por todos os usuários no escopo de aplicativo: ${tasksCounter}</p>
+
     <div class="row center">
       <table class="highlight centered col offset-s2 s8">
         <thead>

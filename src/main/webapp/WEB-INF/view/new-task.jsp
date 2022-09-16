@@ -18,20 +18,20 @@
 
     <h2 class="center">Nova tarefa</h2>
 
-    <form class="col s12 center" action="/to-do-list/criar-conta" method="post">
+    <form class="col s12 center" action="/to-do-list/nova-tarefa" method="post">
       <div class="row center">
         <div class="input-field col offset-s3 s6">
-          <input id="task" type="text" class="validate">
-          <label for="task">Tarefa</label>
+          <input id="taskName" name="taskName" type="text" class="validate">
+          <label for="taskName">Tarefa</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col offset-s3 s6">
-          <input id="note" type="text" class="validate">
-          <label for="note">Observações</label>
+          <input name="taskDescription" id="taskDescription" type="text" class="validate">
+          <label for="taskDescription">Observações</label>
         </div>
       </div>
-      <button class="btn waves-effect waves-light" type="submit" name="action">Adicionar tarefa
+      <button class="btn waves-effect waves-light">Adicionar tarefa
         <i class="material-icons right">send</i>
       </button>
     </form>

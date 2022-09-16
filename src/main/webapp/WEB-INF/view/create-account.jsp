@@ -18,6 +18,8 @@
 
     <h2 class="center">Criar conta</h2>
 
+    <h4 class="center red-text">${error}</h4>
+
     <div class="row">
       <form class="col s12 center" action="/to-do-list/criar-conta" method="post">
         <div class="row center">
@@ -28,7 +30,7 @@
         </div>
         <div class="row">
           <div class="input-field col offset-s3 s6">
-            <input id="password" name="passoword" type="password" class="validate">
+            <input id="password" name="password" type="password" class="validate">
             <label for="password">Senha</label>
           </div>
         </div>
