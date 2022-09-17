@@ -21,9 +21,9 @@ https://www.figma.com/file/J6m5jfVPjugmaql2EsEWRX/To-do-list
     - [ ] forEach
     - [ ] if
     - [x] Template com cabeçalho e rodapé
-- [ ] JavaScript
-    - [ ] Requisição AJAX
-    - [ ] Armazenamento no LocalStorage
+- [x] JavaScript
+    - [x] Requisição AJAX
+    - [x] Armazenamento no LocalStorage
     - [x] Uso de plugin JQuery
 - [x] JPA
     - [x] No mínimo 2 entidades.

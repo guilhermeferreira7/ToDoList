@@ -12,7 +12,7 @@
         <ul class="right">
           <li><a class="blue-text" href="nova-tarefa">Adicionar tarefa</a></li>
           <li><a class="blue-text" href="tarefas-concluidas">Tarefas concluidas</a></li>
-          <li><a class="blue-text" href="logout">Logout</a></li>
+          <li><a class="blue-text" href="logout" id="logout">Logout</a></li>
         </ul>
       </div>
     </nav>
@@ -78,9 +78,14 @@
 
     </div>
 
+    <script>
+      window.onload =  function (){
 
-
-
+        $("#logout").click(() => {
+          localStorage.removeItem("login");
+        })
+      }
+    </script>
 
   </jsp:body>
 

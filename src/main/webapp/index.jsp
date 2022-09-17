@@ -40,9 +40,26 @@
 
         <script>
             window.onload =  function (){
-
-                // impede de colocar caracteres especiais e espaços
                 $('#username').mask('Z',{translation: {'Z': {pattern: /[a-zA-Z]/, recursive: true}}});
+
+                if (localStorage.getItem("login")) {
+                    console.log(JSON.stringify(localStorage.getItem("login")))
+                    $.get('inicial', () => {
+                        window.location.href= '/to-do-list/inicial';
+                    })
+                }
+
+                $("form").submit(() => {
+                $.get('getLogin', function (data){
+                    if (data) {
+                        const login = $("#username").val();
+                        localStorage.setItem("login", login);
+                    }
+                })
+
+
+                })
+
             }
         </script>
 
