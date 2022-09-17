@@ -13,10 +13,10 @@ https://www.figma.com/file/J6m5jfVPjugmaql2EsEWRX/To-do-list
 - [ ] Cookies
     - [ ] Cookie que dura apenas uma sessão do navegador
     - [ ] Cookie com tempo de vida customizado além de uma sessão do navegador
-- [ ] Controle de erros e exceção via web.xml
-    - [ ] Tratamento por código de status ou exceção específica
-    - [ ] Tratamento de erros genérico
-- [ ] Expression Language (EL) para acessar os objetos de domínio (beans) da camada de modelo do MVC
+- [x] Controle de erros e exceção via web.xml
+    - [x] Tratamento por código de status ou exceção específica
+    - [x] Tratamento de erros genérico
+- [x] Expression Language (EL) para acessar os objetos de domínio (beans) da camada de modelo do MVC
 - [ ] JSTL e TagLib
     - [ ] forEach
     - [ ] if
@@ -24,7 +24,7 @@ https://www.figma.com/file/J6m5jfVPjugmaql2EsEWRX/To-do-list
 - [ ] JavaScript
     - [ ] Requisição AJAX
     - [ ] Armazenamento no LocalStorage
-    - [ ] Uso de plugin JQuery
+    - [x] Uso de plugin JQuery
 - [x] JPA
     - [x] No mínimo 2 entidades.
     - [x] Operações de CRUD. 
