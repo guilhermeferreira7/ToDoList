@@ -87,4 +87,10 @@ public class AbstractService<PK, T> {
         }
         return isSuccess;
     }
+
+    public List<T> listByForeignOrObjectProperty(String propertyName, Object propertyValue) {
+        List<T> entities = null;
+        entities = dao.listByForeignOrObjectProperty(propertyName, propertyValue);
+        return entities;
+    }
 }

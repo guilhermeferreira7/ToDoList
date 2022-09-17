@@ -17,9 +17,9 @@ https://www.figma.com/file/J6m5jfVPjugmaql2EsEWRX/To-do-list
     - [x] Tratamento por código de status ou exceção específica
     - [x] Tratamento de erros genérico
 - [x] Expression Language (EL) para acessar os objetos de domínio (beans) da camada de modelo do MVC
-- [ ] JSTL e TagLib
-    - [ ] forEach
-    - [ ] if
+- [x] JSTL e TagLib
+    - [x] forEach
+    - [x] if
     - [x] Template com cabeçalho e rodapé
 - [x] JavaScript
     - [x] Requisição AJAX

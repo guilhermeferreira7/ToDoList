@@ -33,46 +33,20 @@
         </thead>
 
         <tbody>
-        <tr>
-          <td>tarefa 1</td>
-          <td>11/09/2022</td>
-          <td>Terminar até...</td>
-          <td>
-            <button class="center btn btn-small waves-effect waves-light">
-              <i class="material-icons">check</i>
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>tarefa 2</td>
-          <td>12/09/2022</td>
-          <td>Terminar até...</td>
-          <td>
-            <button class="center btn btn-small waves-effect waves-light">
-              <i class="material-icons">check</i>
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>tarefa 3</td>
-          <td>13/09/2022</td>
-          <td>Terminar até...</td>
-          <td>
-            <button class="center btn btn-small waves-effect waves-light">
-              <i class="material-icons">check</i>
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>tarefa 4</td>
-          <td>14/09/2022</td>
-          <td>Terminar até...</td>
-          <td>
-            <button class="center btn btn-small waves-effect waves-light">
-              <i class="material-icons">check</i>
-            </button>
-          </td>
-        </tr>
+        <c:if test="${not empty tasks}">
+          <c:forEach var="task" items="${tasks}">
+            <tr>
+              <td>${task.taskName}</td>
+              <td>${task.description}</td>
+              <td>${task.dataCreated}</td>
+              <td>
+                <button class="center btn btn-small waves-effect waves-light">
+                  <i class="material-icons">check</i>
+                </button>
+              </td>
+            </tr>
+          </c:forEach>
+        </c:if>
         </tbody>
       </table>
 

@@ -11,7 +11,7 @@
         <h2 class="center">Login</h2>
 
         <div class="row">
-            <form class="col s12 center" action="/to-do-list/inicial" method="post">
+            <form class="col s12 center" action="/to-do-list/login" method="post">
                 <div class="row center">
                     <div class="input-field col offset-s3 s6">
                         <input id="username" name="username" type="text" class="validate">
@@ -50,14 +50,12 @@
                 }
 
                 $("form").submit(() => {
-                $.get('getLogin', function (data){
-                    if (data) {
-                        const login = $("#username").val();
-                        localStorage.setItem("login", login);
-                    }
-                })
-
-
+                    $.get('getLogin', function (data){
+                        if (data) {
+                            const login = $("#username").val();
+                            localStorage.setItem("login", login);
+                        }
+                    })
                 })
 
             }

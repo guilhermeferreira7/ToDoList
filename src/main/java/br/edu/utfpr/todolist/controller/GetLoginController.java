@@ -1,5 +1,4 @@
 package br.edu.utfpr.todolist.controller;
-
 import br.edu.utfpr.todolist.model.domain.User;
 
 import com.google.gson.Gson;
@@ -20,7 +19,6 @@ public class GetLoginController extends HttpServlet {
             response.setContentType("plain/text");
             response.setCharacterEncoding("UTF-8");
             response.getWriter().write(json);
-
         } else {
             response.getWriter().write("");
         }

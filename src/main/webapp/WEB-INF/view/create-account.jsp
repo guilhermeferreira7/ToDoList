@@ -40,6 +40,12 @@
       </form>
     </div>
 
+    <script>
+      window.onload =  function (){
+        $('#username').mask('Z',{translation: {'Z': {pattern: /[a-zA-Z]/, recursive: true}}});
+      };
+    </script>
+
   </jsp:body>
 
 </t:template>
