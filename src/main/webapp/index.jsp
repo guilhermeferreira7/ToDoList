@@ -38,6 +38,14 @@
             </h3>
         </div>
 
+        <script>
+            window.onload =  function (){
+
+                // impede de colocar caracteres especiais e espaços
+                $('#username').mask('Z',{translation: {'Z': {pattern: /[a-zA-Z]/, recursive: true}}});
+            }
+        </script>
+
     </jsp:body>
 
 </t:template>
