@@ -19,6 +19,8 @@
 
     <h2 class="center">Minhas tarefas</h2>
 
+    <h4>${login}</h4>
+
     <p class="center">Total de tarefas adicionadas por todos os usuários no escopo de aplicativo: ${tasksCounter}</p>
 
     <div class="row center">
@@ -26,8 +28,8 @@
         <thead>
         <tr>
           <th>Tarefa</th>
-          <th>Data de criação</th>
           <th>Observações</th>
+          <th>Data de criação</th>
           <th>Marcar como concluída</th>
         </tr>
         </thead>
@@ -55,18 +57,19 @@
     <script>
       window.onload =  function (){
 
-
-
         $(".completeTask").click(function () {
           const params = {
             id: $(this).attr("id")
           }
 
-          $.post('tarefas-concluidas', $.param(params))
+          const res = confirm("Quer mesmo marcar como concluída?");
+          if (res) {
+            $.post('tarefas-concluidas', $.param(params))
+          }
         })
 
         $("#logout").click(() => {
-          localStorage.removeItem("login");
+          localStorage.clear();
         })
       }
     </script>

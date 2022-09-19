@@ -7,7 +7,7 @@
 <t:template title="Página inicial">
 
     <jsp:body>
-        <div class="center">
+        <div class="center error-image">
             <img src="assets/img/500.jpg" alt="gato" width="500">
         </div>
     </jsp:body>

@@ -4,13 +4,11 @@ import lombok.Data;
 import lombok.NonNull;
 
 @Data
-public class TaskDTO {
-    @NonNull
-    private Long id;
+public class TaskDTOCompleted {
     @NonNull
     private String taskName;
     @NonNull
-    private String description;
+    private String dataCompleted;
     @NonNull
     private String dataCreated;
 

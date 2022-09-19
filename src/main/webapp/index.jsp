@@ -44,12 +44,19 @@
             window.onload =  function (){
                 $('#username').mask('Z',{translation: {'Z': {pattern: /[a-zA-Z]/, recursive: true}}});
 
+
                 if (localStorage.getItem("login")) {
-                    $.get('inicial', () => {
+                    const params = {
+                        username: localStorage.getItem("login")
+                    }
+
+                    $.get('inicial', $.param(params), function () {
                         window.location.href= '/to-do-list/inicial';
                     })
                 } else {
-                    localStorage.setItem("login", $("#username").val());
+                    $("form").submit(() => {
+                        localStorage.setItem("login", JSON.stringify($("#username").val()));
+                    })
                 }
 
 

@@ -2,6 +2,8 @@ package br.edu.utfpr.todolist.controller;
 
 import br.edu.utfpr.todolist.model.domain.Task;
 import br.edu.utfpr.todolist.model.domain.User;
+import br.edu.utfpr.todolist.model.dto.TaskDTOCompleted;
+import br.edu.utfpr.todolist.model.mapper.TaskMapper;
 import br.edu.utfpr.todolist.service.TaskService;
 
 import javax.servlet.*;
@@ -21,11 +23,11 @@ public class CompletedTasksController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User login = (User) request.getSession(true).getAttribute("login");
         List<Task> tasks = taskService.listByForeignOrObjectProperty("user", login);
-        List<Task> completedTasks = new ArrayList<>();
+        List<TaskDTOCompleted> completedTasks = new ArrayList<>();
 
         for (Task task: tasks) {
             if (task.isCompleted()) {
-                completedTasks.add(task);
+                completedTasks.add(TaskMapper.toDTOCompleted(task));
             }
         }
 
@@ -46,5 +48,6 @@ public class CompletedTasksController extends HttpServlet {
         task.setDataCompleted(dataCompleted);
         taskService.update(task);
 
+        response.sendRedirect("inicial");
     }
 }

@@ -2,6 +2,8 @@ package br.edu.utfpr.todolist.controller;
 
 import br.edu.utfpr.todolist.model.domain.Task;
 import br.edu.utfpr.todolist.model.domain.User;
+import br.edu.utfpr.todolist.model.dto.TaskDTO;
+import br.edu.utfpr.todolist.model.mapper.TaskMapper;
 import br.edu.utfpr.todolist.service.TaskService;
 import br.edu.utfpr.todolist.service.UserService;
 
@@ -23,24 +25,29 @@ public class HomeController extends HttpServlet {
         User login = (User) request.getSession(true).getAttribute("login");
         if (login == null) {
             login = userService.getByProperty("username", request.getParameter("username"));
+            System.out.println("login get " +login);
             request.getSession(true).setAttribute("login", login);
         }
 
         List<Task> tasks = taskService.listByForeignOrObjectProperty("user", login);
-        List<Task> toDoTasks = new ArrayList<>();
+        List<TaskDTO> toDoTasks = new ArrayList<>();
 
-        for (Task task: tasks) {
+        for (Task task : tasks) {
             if (!task.isCompleted()) {
-                toDoTasks.add(task);
+                toDoTasks.add(TaskMapper.toDTO(task));
             }
         }
 
         request.setAttribute("tasks", toDoTasks);
         request.getRequestDispatcher("/WEB-INF/view/home.jsp").forward(request, response);
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println(request.getParameter("username"));
+        User login = userService.getByProperty("username", request.getParameter("username"));
 
+        request.getSession(true).setAttribute("login", login);
     }
 
 }

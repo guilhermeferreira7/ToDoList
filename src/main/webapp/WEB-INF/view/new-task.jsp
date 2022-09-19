@@ -17,24 +17,26 @@
     </nav>
 
     <h2 class="center">Nova tarefa</h2>
+    <div class="row">
 
-    <form class="col s12 center" action="/to-do-list/nova-tarefa" method="post">
-      <div class="row center">
-        <div class="input-field col offset-s3 s6">
-          <input id="taskName" name="taskName" type="text" class="validate">
-          <label for="taskName">Tarefa</label>
+      <form class="col s12 center" action="/to-do-list/nova-tarefa" method="post">
+        <div class="row center">
+          <div class="input-field col offset-s3 s6">
+            <input id="taskName" name="taskName" type="text" class="validate">
+            <label for="taskName">Tarefa</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col offset-s3 s6">
-          <input name="taskDescription" id="taskDescription" type="text" class="validate">
-          <label for="taskDescription">Observações</label>
+        <div class="row">
+          <div class="input-field col offset-s3 s6">
+            <input name="taskDescription" id="taskDescription" type="text" class="validate">
+            <label for="taskDescription">Observações</label>
+          </div>
         </div>
-      </div>
-      <button class="btn waves-effect waves-light">Adicionar tarefa
-        <i class="material-icons right">send</i>
-      </button>
-    </form>
+        <button class="btn waves-effect waves-light">Adicionar tarefa
+          <i class="material-icons right">send</i>
+        </button>
+      </form>
+    </div>
 
   </jsp:body>
 
