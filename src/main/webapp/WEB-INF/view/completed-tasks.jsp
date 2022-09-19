@@ -30,26 +30,15 @@
         </thead>
 
         <tbody>
-        <tr>
-          <td>tarefa 1</td>
-          <td>11/09/2022</td>
-          <td>12/09/2022</td>
-        </tr>
-        <tr>
-          <td>tarefa 2</td>
-          <td>12/09/2022</td>
-          <td>13/09/2022</td>
-        </tr>
-        <tr>
-          <td>tarefa 3</td>
-          <td>13/09/2022</td>
-          <td>14/09/2022</td>
-        </tr>
-        <tr>
-          <td>tarefa 4</td>
-          <td>14/09/2022</td>
-          <td>15/09/2022</td>
-        </tr>
+        <c:if test="${not empty tasks}">
+          <c:forEach var="task" items="${tasks}">
+            <tr>
+              <td>${task.taskName}</td>
+              <td>${task.dataCreated}</td>
+              <td>${task.dataCompleted}</td>
+            </tr>
+          </c:forEach>
+        </c:if>
         </tbody>
       </table>
 

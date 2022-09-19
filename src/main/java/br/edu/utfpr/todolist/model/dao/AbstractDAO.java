@@ -5,6 +5,9 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+
+import br.edu.utfpr.todolist.model.domain.Task;
+import br.edu.utfpr.todolist.model.domain.User;
 import br.edu.utfpr.todolist.util.JPAUtil;
 
 @SuppressWarnings("unchecked")
@@ -168,7 +171,8 @@ public class AbstractDAO<PK, T> {
     }
 
     public List<T> listByTwoForeignOrObjectProperty(String firstPropertyName, Object firstPropertyValue, String secondPropertyName, Object secondPropertyValue) {
-        String queryString = "SELECT o FROM " + getTypeClass().getName() + " o where o." + firstPropertyName + " = :param AND o." + secondPropertyName + " = :param2";
+        String queryString = "SELECT o FROM " + getTypeClass().getName() +
+                " o where o." + firstPropertyName + " = :param AND o." + secondPropertyName + " = :param2";
 
         Query query = entityManager.createQuery(queryString);
         query.setParameter("param", firstPropertyValue);

@@ -7,7 +7,9 @@
 <t:template title="Página inicial">
 
     <jsp:body>
-        <p>Error 400 bad request</p>
+        <div class="center">
+            <img src="assets/img/400.jpg" alt="gato" width="500">
+        </div>
 
     </jsp:body>
 

@@ -93,4 +93,11 @@ public class AbstractService<PK, T> {
         entities = dao.listByForeignOrObjectProperty(propertyName, propertyValue);
         return entities;
     }
+
+    public List<T> listToDoTasks() {
+        return null;
+    }
+    public List<T> listCompletedTasks() {
+        return null;
+    }
 }

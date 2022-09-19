@@ -7,7 +7,9 @@
 <t:template title="Página inicial">
 
     <jsp:body>
-        <p>Error 404 not found</p>
+        <div class="center">
+            <img src="assets/img/404.jpg" alt="gato" width="500">
+        </div>
 
     </jsp:body>
 

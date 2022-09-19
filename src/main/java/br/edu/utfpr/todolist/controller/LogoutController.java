@@ -9,6 +9,7 @@ import java.io.IOException;
 public class LogoutController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getSession(true).setAttribute("login", null);
         response.sendRedirect("/to-do-list");
     }
 

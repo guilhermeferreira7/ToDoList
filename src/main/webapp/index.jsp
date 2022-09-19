@@ -10,6 +10,8 @@
 
         <h2 class="center">Login</h2>
 
+        <h4 class="center red-text">${error}</h4>
+
         <div class="row">
             <form class="col s12 center" action="/to-do-list/login" method="post">
                 <div class="row center">
@@ -43,20 +45,13 @@
                 $('#username').mask('Z',{translation: {'Z': {pattern: /[a-zA-Z]/, recursive: true}}});
 
                 if (localStorage.getItem("login")) {
-                    console.log(JSON.stringify(localStorage.getItem("login")))
                     $.get('inicial', () => {
                         window.location.href= '/to-do-list/inicial';
                     })
+                } else {
+                    localStorage.setItem("login", $("#username").val());
                 }
 
-                $("form").submit(() => {
-                    $.get('getLogin', function (data){
-                        if (data) {
-                            const login = $("#username").val();
-                            localStorage.setItem("login", login);
-                        }
-                    })
-                })
 
             }
         </script>

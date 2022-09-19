@@ -28,8 +28,7 @@ public class CreateAccountController extends HttpServlet {
         } else {
             User user = new User(username, password);
             userService.save(user);
-            request.getSession(true).setAttribute("login", user);
-            response.sendRedirect("inicial");
+            response.sendRedirect("/to-do-list");
         }
     }
 }

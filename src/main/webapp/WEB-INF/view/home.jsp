@@ -40,7 +40,7 @@
               <td>${task.description}</td>
               <td>${task.dataCreated}</td>
               <td>
-                <button class="center btn btn-small waves-effect waves-light">
+                <button id="${task.id}" class="completeTask" class="center btn btn-small waves-effect waves-light">
                   <i class="material-icons">check</i>
                 </button>
               </td>
@@ -54,6 +54,16 @@
 
     <script>
       window.onload =  function (){
+
+
+
+        $(".completeTask").click(function () {
+          const params = {
+            id: $(this).attr("id")
+          }
+
+          $.post('tarefas-concluidas', $.param(params))
+        })
 
         $("#logout").click(() => {
           localStorage.removeItem("login");

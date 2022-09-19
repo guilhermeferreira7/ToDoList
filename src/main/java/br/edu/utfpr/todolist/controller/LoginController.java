@@ -23,8 +23,10 @@ public class LoginController extends HttpServlet {
 
         User userDB = userService.getByProperty("username", username);
         if (userDB == null) {
+            request.setAttribute("flash.error", "Usuário não existe ou senha errada");
             response.sendRedirect("/to-do-list");
         } else if (!userDB.getPassword().equals(password)) {
+            request.setAttribute("flash.error", "Usuário não existe ou senha errada");
             response.sendRedirect("/to-do-list");
         } else {
             request.getSession(true).setAttribute("login", userDB);
