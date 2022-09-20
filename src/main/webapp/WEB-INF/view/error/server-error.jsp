@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<t:template title="Página inicial">
+<t:template title="Erro interno">
 
     <jsp:body>
         <div class="center error-image">

@@ -4,13 +4,16 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<t:template title="Página inicial">
+<t:template title="index">
 
     <jsp:body>
 
         <h2 class="center">Login</h2>
 
         <h4 class="center red-text">${error}</h4>
+
+        <p class="center">Último usuário logado: ${lastLogin}</p>
+        <p class="center">Número de logins nessa sessão: ${loginCounter}</p>
 
         <div class="row">
             <form class="col s12 center" action="/to-do-list/login" method="post">
