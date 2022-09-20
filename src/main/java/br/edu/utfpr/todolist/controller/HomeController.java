@@ -25,7 +25,6 @@ public class HomeController extends HttpServlet {
         User login = (User) request.getSession(true).getAttribute("login");
         if (login == null) {
             login = userService.getByProperty("username", request.getParameter("username"));
-            System.out.println("login get " +login);
             request.getSession(true).setAttribute("login", login);
         }
 
@@ -44,10 +43,7 @@ public class HomeController extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println(request.getParameter("username"));
-        User login = userService.getByProperty("username", request.getParameter("username"));
 
-        request.getSession(true).setAttribute("login", login);
     }
 
 }

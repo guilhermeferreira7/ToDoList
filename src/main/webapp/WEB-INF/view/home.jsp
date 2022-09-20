@@ -19,7 +19,7 @@
 
     <h2 class="center">Minhas tarefas</h2>
 
-    <h4>${login}</h4>
+    <p class="center" id="username"></p>
 
     <p class="center">Total de tarefas adicionadas por todos os usuários no escopo de aplicativo: ${tasksCounter}</p>
 
@@ -56,6 +56,10 @@
 
     <script>
       window.onload =  function (){
+
+        const userLogin = localStorage.getItem("login");
+        const h4 = "<h4>Bem vindo de volta " + userLogin + " </h4>";
+        $("#username").append(h4)
 
         $(".completeTask").click(function () {
           const params = {

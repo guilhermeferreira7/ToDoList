@@ -55,7 +55,7 @@
                     })
                 } else {
                     $("form").submit(() => {
-                        localStorage.setItem("login", JSON.stringify($("#username").val()));
+                        localStorage.setItem("login", $("#username").val());
                     })
                 }
 
