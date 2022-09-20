@@ -12,8 +12,8 @@
 
         <h4 class="center red-text">${error}</h4>
 
-        <p class="center">Último usuário logado: ${lastLogin}</p>
-        <p class="center">Número de logins nessa sessão: ${loginCounter}</p>
+        <div id="lastLogin" class="center"></div>
+        <p class="center">Logins nessa sessão: ${loginCounter}</p>
 
         <div class="row">
             <form class="col s12 center" action="/to-do-list/login" method="post">
@@ -47,6 +47,9 @@
             window.onload =  function (){
                 $('#username').mask('Z',{translation: {'Z': {pattern: /[a-zA-Z]/, recursive: true}}});
 
+                const p = "<p>Último usuário logado: " + getCookie("lastLogin") + "</p>"
+                $("#lastLogin").append(p)
+
                 if (localStorage.getItem("login")) {
                     const params = {
                         username: localStorage.getItem("login")
@@ -61,6 +64,12 @@
                     })
                 }
 
+                function getCookie(name) {
+                    const value = "; "+ document.cookie;
+
+                    const parts = value.split("; " + name +"=");
+                    if (parts.length === 2) return parts.pop().split(';').shift();
+                }
 
             }
         </script>
