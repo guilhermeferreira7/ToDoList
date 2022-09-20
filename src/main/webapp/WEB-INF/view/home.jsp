@@ -24,39 +24,42 @@
     <p class="center">Total de tarefas adicionadas por todos os usuários no escopo de aplicativo: ${tasksCounter}</p>
 
     <div class="row center">
-      <table class="highlight centered col offset-s2 s8">
-        <thead>
-        <tr>
-          <th>Tarefa</th>
-          <th>Observações</th>
-          <th>Data de criação</th>
-          <th>Marcar como concluída</th>
-        </tr>
-        </thead>
+      <c:if test="${empty tasks}">
+        <h4 class="center">Nenhuma tarefa adicionada</h4>
+      </c:if>
 
-        <tbody>
-        <c:if test="${not empty tasks}">
-          <c:forEach var="task" items="${tasks}">
-            <tr>
-              <td>${task.taskName}</td>
-              <td>${task.description}</td>
-              <td>${task.dataCreated}</td>
-              <td>
-                <button id="${task.id}" class="completeTask" class="center btn btn-small waves-effect waves-light">
-                  <i class="material-icons">check</i>
-                </button>
-              </td>
-            </tr>
-          </c:forEach>
-        </c:if>
-        </tbody>
-      </table>
+      <c:if test="${not empty tasks}">
+        <table class="highlight centered col offset-s2 s8">
+          <thead>
+          <tr>
+            <th>Tarefa</th>
+            <th>Observações</th>
+            <th>Data de criação</th>
+            <th>Marcar como concluída</th>
+          </tr>
+          </thead>
+
+          <tbody>
+            <c:forEach var="task" items="${tasks}">
+              <tr>
+                <td>${task.taskName}</td>
+                <td>${task.description}</td>
+                <td>${task.dataCreated}</td>
+                <td>
+                  <button id="${task.id}" class="completeTask" class="center btn btn-small waves-effect waves-light">
+                    <i class="material-icons">check</i>
+                  </button>
+                </td>
+              </tr>
+            </c:forEach>
+          </tbody>
+        </table>
+      </c:if>
 
     </div>
 
     <script>
       window.onload =  function (){
-
         const userLogin = localStorage.getItem("login");
         const h4 = "<h4>Bem vindo de volta " + userLogin + " </h4>";
         $("#username").append(h4)

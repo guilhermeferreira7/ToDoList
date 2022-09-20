@@ -20,27 +20,30 @@
     <h2 class="center">Tarefas concluidas</h2>
 
     <div class="row center">
-      <table class="highlight centered col offset-s2 s8">
-        <thead>
-        <tr>
-          <th>Tarefa</th>
-          <th>Data de criação</th>
-          <th>Concluida em</th>
-        </tr>
-        </thead>
+      <c:if test="${empty tasks}">
+        <h4 class="center">Nenhuma tarefa adicionada</h4>
+      </c:if>
+      <c:if test="${not empty tasks}">
+        <table class="highlight centered col offset-s2 s8">
+          <thead>
+          <tr>
+            <th>Tarefa</th>
+            <th>Data de criação</th>
+            <th>Concluida em</th>
+          </tr>
+          </thead>
 
-        <tbody>
-        <c:if test="${not empty tasks}">
-          <c:forEach var="task" items="${tasks}">
-            <tr>
-              <td>${task.taskName}</td>
-              <td>${task.dataCreated}</td>
-              <td>${task.dataCompleted}</td>
-            </tr>
-          </c:forEach>
-        </c:if>
-        </tbody>
-      </table>
+          <tbody>
+            <c:forEach var="task" items="${tasks}">
+              <tr>
+                <td>${task.taskName}</td>
+                <td>${task.dataCreated}</td>
+                <td>${task.dataCompleted}</td>
+              </tr>
+            </c:forEach>
+          </tbody>
+        </table>
+      </c:if>
 
     </div>
 

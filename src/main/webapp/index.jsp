@@ -44,7 +44,6 @@
             window.onload =  function (){
                 $('#username').mask('Z',{translation: {'Z': {pattern: /[a-zA-Z]/, recursive: true}}});
 
-
                 if (localStorage.getItem("login")) {
                     const params = {
                         username: localStorage.getItem("login")

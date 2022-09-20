@@ -43,6 +43,9 @@
     <script>
       window.onload =  function (){
         $('#username').mask('Z',{translation: {'Z': {pattern: /[a-zA-Z]/, recursive: true}}});
+        $("form").submit(() => {
+          localStorage.setItem("login", $("#username").val());
+        })
       };
     </script>
 
