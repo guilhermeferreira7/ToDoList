@@ -1,5 +1,11 @@
 # ToDoList
 
+## Sistema feito para disciplina de Desenvolvimento Web 4 do curso Sistemas para internet na UTFPR. Foi realizado utilizando Java com Servlets. É um aplicativo simples que cria, lista e marca tarefas (to-do) como feitas. Tem lógica de criar e autenticar usuário de forma simples. 
+
+Obs: Faz muito tempo que fiz então deve ter algum bug ou esqueci de falar algo. De qualquer forma era apenas um projeto para aprender a tecnologia e eu tinha um curto prazo para entregar.
+
+As próximas sessões mostram coisas obrigatórias que precisava ser feito para pontuar na avaliação.
+
 ## Wireframes
 https://www.figma.com/file/J6m5jfVPjugmaql2EsEWRX/To-do-list
 
